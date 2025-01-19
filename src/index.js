@@ -1,11 +1,12 @@
 // Always use try catch to connect to db because there are cases of error occurence and also look for async and await
 // require('dotenv').config({path: './env'})
-import dotenv from "dotenv"
+import app from "./app.js"
 import connectDB from "./db/index.js"
-
+import dotenv from "dotenv"
 dotenv.config({
     path: '.env'
 })
+
 
 
 connectDB()

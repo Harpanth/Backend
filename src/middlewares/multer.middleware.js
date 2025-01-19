@@ -1,8 +1,10 @@
 import multer from "multer";
 
 const storage = multer.diskStorage({
-    destination: function (req,file,cb){
-        cb(null,"./public/temp")
+  destination: function (req, file, cb) {
+    // This storage needs public/images folder in the root directory
+    // Else it will throw an error saying cannot find path public/images
+    cb(null, "./public/temp");
     },
     filename: function(req,file,cb){
 
@@ -11,5 +13,5 @@ const storage = multer.diskStorage({
 })
 
 export const upload = multer({ 
-    storage: storage 
+    storage,
 })
