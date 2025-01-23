@@ -30,13 +30,6 @@ const uploadOnCloudinary = async (localFilePath) => {
     try {
         console.log("Local file path being uploaded:", localFilePath);
 
-        try {
-            fs.accessSync(localFilePath, fs.constants.R_OK);
-            console.log("File is accessible and readable.");
-        } catch (err) {
-            console.error("File is not accessible:", err.message);
-            process.exit(1);
-        }
         
         await checkCloudinaryConnection();
         if (!localFilePath) return null
